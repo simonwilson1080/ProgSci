@@ -12,8 +12,10 @@ def read_numbers_from_csv(path):
     with open(path, "r") as f:
         for line in f:
             value = line.strip()
-            if line == '' or math.isnan(line):
-                continue # skips empty values
+            try:
+                value = float(value)
+            except ValueError:
+                continue # skips values that could not succesfully be converted to floats
             # TODO: convert value to float and add to numbers
             # HINT: you should skip values that cannot be converted
             numbers.append(value)
