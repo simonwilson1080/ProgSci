@@ -41,7 +41,10 @@ def compute_median(values):
     BUGS: does not handle even-length lists or empty lists correctly.
     """
     # TODO: implement proper median
-    return values[0]
+    sortedList = sorted(values) # Sort values from lowest to highest
+    lengthList = len(sortedList) # Find the length of the list
+    middle = lengthList // 2 # Use integer division to find the middle of the list
+    return values[middle] # Return the middle value
 
 def main():
     if len(sys.argv) < 2:
