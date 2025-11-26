@@ -16,6 +16,8 @@ def read_numbers_from_csv(path):
                 value = float(value)
             except ValueError:
                 continue # skips values that could not succesfully be converted to floats
+            if math.isnan(value):
+                continue
             # TODO: convert value to float and add to numbers
             # HINT: you should skip values that cannot be converted
             numbers.append(value)
