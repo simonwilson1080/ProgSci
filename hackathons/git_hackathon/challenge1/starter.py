@@ -1,4 +1,5 @@
 import sys
+import math
 
 # Simons Changes:
 
@@ -11,7 +12,7 @@ def read_numbers_from_csv(path):
     with open(path, "r") as f:
         for line in f:
             value = line.strip()
-            if line == '':
+            if line == '' or math.isnan(line):
                 continue # skips empty values
             # TODO: convert value to float and add to numbers
             # HINT: you should skip values that cannot be converted
