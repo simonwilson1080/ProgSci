@@ -8,19 +8,21 @@ def read_numbers_from_csv(path):
 
     BUGS: this function does not correctly handle invalid values or empty lines.
     """
-    numbers = []
     with open(path, "r") as f:
-        for line in f:
-            value = line.strip()
-            try:
-                value = float(value)
-            except ValueError:
-                continue # skips values that could not succesfully be converted to floats
-            if math.isnan(value):
-                continue # skips Nan values
-            # TODO: convert value to float and add to numbers
-            # HINT: you should skip values that cannot be converted
-            numbers.append(value)
+        numbers = read_numbers_helper(f) # implemented helper function to handle invalid values
+    return numbers
+
+def read_numbers_helper(file):
+    numbers = []
+    for line in file:
+        value = line.strip()
+        try:
+            value = float(value)
+        except ValueError:
+            continue # skips values that could not succesfully be converted to floats
+        if math.isnan(value):
+            continue # skips Nan values
+        numbers.append(value)
     return numbers
 
 def compute_mean(values):
