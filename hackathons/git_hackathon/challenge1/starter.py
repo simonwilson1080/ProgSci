@@ -1,5 +1,7 @@
 import sys
 
+# Simons Changes:
+
 def read_numbers_from_csv(path):
     """Read numeric values from a CSV file (one value per line).
 
