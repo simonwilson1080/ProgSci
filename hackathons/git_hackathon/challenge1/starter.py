@@ -44,8 +44,8 @@ def compute_median(values):
     sortedList = sorted(values) # Sort values from lowest to highest
     lengthList = len(sortedList) # Find the length of the list
     middle = lengthList // 2 # Use integer division to find the middle of the list
-    return values[middle] # Return the middle value
-    # How come the expected output file has the media return 3.0 instead of 4.0? The list is of odd length so the median should be 4.0.
+    return sortedList[middle] # Return the middle value
+
 
 def main():
     if len(sys.argv) < 2:
