@@ -30,7 +30,9 @@ def compute_mean(values):
     """
     total = 0
     for v in values:
-        total = v  # BUG: this is wrong
+        total += v  # Fixed to add the actual value to its last iteration
+    
+    total /= len(values) # Divide sum of values by number of values
     return total
 
 def compute_median(values):
